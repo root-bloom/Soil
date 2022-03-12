@@ -1,5 +1,6 @@
 {
     "name": "root-bloom/soil",
+    "type": "wordpress-muplugin",
     "autoload": {
         "psr-4": {
             "RootBloom\\": "src/"
