@@ -6,12 +6,14 @@ class Soil
 {
     public function __construct()
     {
-        $this->cleanDashboard();
-        $this->cleanEditor();
-        $this->cleanHead();
-        $this->disableComments();
-        $this->setupQueries();
-        $this->setupThemeSupport();
+        add_action('init', function() {
+            $this->cleanDashboard();
+            $this->cleanEditor();
+            $this->cleanHead();
+            $this->disableComments();
+            $this->setupQueries();
+            $this->setupThemeSupport();
+        });
     }
 
     protected function cleanDashboard()
