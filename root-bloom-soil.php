@@ -1,14 +1,10 @@
 <?php
 
 /**
- * Plugin Name: Root + Bloom Soil
- * Plugin URI: https://rootandbloom.studio/
- * Author: Jarno and Aksana - Root + Bloom Studio
- * Description: Clean soil for your theme
- * Text Domain: root-bloom
- * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Update URI: https://example.com/my-plugin/
- * Version: 1.0
+ * Plugin Name: Soil by Root and Bloom
  */
 
-new RootBloom\Soil();
+add_action('wp', function () {
+    require_once __DIR__ . '/vendor/autoload.php';
+    new RootBloom\Soil();
+});

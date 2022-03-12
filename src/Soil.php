@@ -16,9 +16,6 @@ class Soil
 
     protected function cleanDashboard()
     {
-        define('DISALLOW_FILE_EDIT', true);
-        define('DISABLE_FSE', true);
-
         remove_action('welcome_panel', 'wp_welcome_panel');
         remove_action('template_redirect', 'rest_output_link_header');
     }
