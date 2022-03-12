@@ -6,6 +6,7 @@ class Soil
 {
     public function __construct()
     {
+        $this->cleanJsonRoutes();
         add_action('init', function() {
             $this->cleanDashboard();
             $this->cleanEditor();
@@ -188,6 +189,14 @@ class Soil
                     'core/text-columns'
                 ];
             }, 10, 2);
+        });
+    }
+
+    private function cleanJsonRoutes()
+    {
+        add_filter('rest_endpoints', function ($endpoints) {
+            unset($endpoints['/']);
+            return $endpoints;
         });
     }
 }
