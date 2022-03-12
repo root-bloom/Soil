@@ -25,10 +25,11 @@ class Soil
 
     protected function cleanEditor()
     {
+        remove_action('welcome_panel', 'wp_welcome_panel');
+
         // Disable Block Editor FullScreen mode & Welcome guide
         add_action('enqueue_block_editor_assets', function () {
             $script = "window.onload = function() { 
-                wp.data && wp.data.select('core/edit-post').isFeatureActive('welcomeGuide') && wp.data.dispatch('core/edit-post').toggleFeature('welcomeGuide');
                 wp.data && wp.data.select('core/edit-post').isFeatureActive('fullscreenMode') && wp.data.dispatch('core/edit-post').toggleFeature('fullscreenMode');
             }";
             wp_add_inline_script('wp-blocks', $script);
