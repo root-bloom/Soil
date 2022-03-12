@@ -6,7 +6,17 @@
             "RootBloom\\": "src/"
         }
     },
+    "authors": [
+        {
+            "name": "Jarno van Wezel",
+            "email": "jarno@rootandbloom.studio",
+            "homepage": "https://rootandbloom.studio"
+        }
+    ],
     "require": {
         "php": "^7.4"
+    },
+    "scripts": {
+        "post-update-cmd": "php -r \"copy('root-bloom-soil.php', '../root-bloom-soil.php');\""
     }
 }
